@@ -93,6 +93,7 @@ second_counter = time.time()
 fps = None
 
 # Define telemetry function for what to do with incoming data
+
 @sio.on('telemetry')
 def telemetry(sid, data):
 

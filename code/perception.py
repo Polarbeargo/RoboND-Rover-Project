@@ -3,7 +3,6 @@ import cv2
 
 # Identify pixels above the threshold
 # Threshold of RGB > 160 does a nice job of identifying ground pixels only
-
 def color_thresh(img, rgb_thresh=(160, 160, 160)):
     # Create an array of zeros same xy size as img, but single channel
     color_select = np.zeros_like(img[:, :, 0])
@@ -19,7 +18,6 @@ def color_thresh(img, rgb_thresh=(160, 160, 160)):
     return color_select
 
 # Define a function to convert from image coords to rover coords
-
 def rover_coords(binary_img):
     # Identify nonzero pixels
     ypos, xpos = binary_img.nonzero()
@@ -30,7 +28,6 @@ def rover_coords(binary_img):
     return x_pixel, y_pixel
 
 # Define a function to convert to radial coords in rover space
-
 def to_polar_coords(x_pixel, y_pixel):
     # Convert (x_pixel, y_pixel) to (distance, angle)
     # in polar coordinates in rover space
@@ -41,7 +38,6 @@ def to_polar_coords(x_pixel, y_pixel):
     return dist, angles
 
 # Define a function to map rover space pixels to world space
-
 def rotate_pix(xpix, ypix, yaw):
     # Convert yaw to radians
     yaw_rad = yaw * np.pi / 180
@@ -60,7 +56,6 @@ def translate_pix(xpix_rot, ypix_rot, xpos, ypos, scale):
 
 # Define a function to apply rotation and translation (and clipping)
 # Once you define the two functions above this function should work
-
 def pix_to_world(xpix, ypix, xpos, ypos, yaw, world_size, scale):
     # Apply rotation
     xpix_rot, ypix_rot = rotate_pix(xpix, ypix, yaw)
@@ -73,7 +68,6 @@ def pix_to_world(xpix, ypix, xpos, ypos, yaw, world_size, scale):
     return x_pix_world, y_pix_world
 
 # Define a function to perform a perspective transform
-
 def perspect_transform(img, src, dst):
 
     M = cv2.getPerspectiveTransform(src, dst)
@@ -83,7 +77,6 @@ def perspect_transform(img, src, dst):
     return warped
 
 # Apply the above functions in succession and update the Rover state accordingly
-
 def perception_step(Rover):
     # Perform perception steps to update Rover()
     # TODO:
@@ -143,7 +136,6 @@ def perception_step(Rover):
     Rover.worldmap[y_world, x_world, 2] += 10
     Rover.worldmap[obs_y_world, obs_x_world, 0] += 1
 
-    
     # 8) Convert rover-centric pixel positions to polar coordinates
     # Update Rover pixel distances and angles
     # Rover.nav_dists = rover_centric_pixel_distances

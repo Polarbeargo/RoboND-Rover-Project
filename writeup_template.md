@@ -58,7 +58,6 @@ def rover_coords(binary_img):
     return x_pixel, y_pixel
 
 # Define a function to convert to radial coords in rover space
-
 def to_polar_coords(x_pixel, y_pixel):
     # Convert (x_pixel, y_pixel) to (distance, angle)
     # in polar coordinates in rover space
@@ -69,7 +68,6 @@ def to_polar_coords(x_pixel, y_pixel):
     return dist, angles
 
 # Define a function to map rover space pixels to world space
-
 def rotate_pix(xpix, ypix, yaw):
     # Convert yaw to radians
     yaw_rad = yaw * np.pi / 180
@@ -88,7 +86,6 @@ def translate_pix(xpix_rot, ypix_rot, xpos, ypos, scale):
 
 # Define a function to apply rotation and translation (and clipping)
 # Once you define the two functions above this function should work
-
 def pix_to_world(xpix, ypix, xpos, ypos, yaw, world_size, scale):
     # Apply rotation
     xpix_rot, ypix_rot = rotate_pix(xpix, ypix, yaw)
@@ -274,7 +271,7 @@ def decision_step(Rover):
     return Rover
 ```
 
-#### 2. Launching in autonomous mode your rover can navigate and map autonomously.  Explain your results and how you might improve them in your writeup.  
+#### 4. Launching in autonomous mode your rover can navigate and map autonomously.  Explain your results and how you might improve them in your writeup.  
 
 **Note: running the simulator with different choices of resolution and graphics quality may produce different results, particularly on different machines!  Make a note of your simulator settings (resolution and graphics quality set on launch) and frames per second (FPS output to terminal by `drive_rover.py`) in your writeup when you submit the project so your reviewer can reproduce your results.**
 

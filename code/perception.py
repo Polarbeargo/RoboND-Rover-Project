@@ -131,6 +131,7 @@ def perception_step(Rover):
     threshed = color_thresh(warped)
     obstacles = np.absolute(np.float32(threshed) - 1) * mask
     samples_area = color_thresh_boundary(warped, (0, 105, 0), (255, 220, 65))
+    
     # 4) Update Rover.vision_image (this will be displayed on left side of screen)
     # Example: Rover.vision_image[:,:,0] = obstacle color-thresholded binary image
     #          Rover.vision_image[:,:,1] = rock_sample color-thresholded binary image

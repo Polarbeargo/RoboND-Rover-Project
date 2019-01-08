@@ -346,5 +346,5 @@ def decision_step(Rover):
  
 
 ![alt text][image1]
-
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/6zOPZkshJkc/0.jpg)](https://youtu.be/6zOPZkshJkc)
 

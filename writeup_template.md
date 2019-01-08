@@ -1,6 +1,8 @@
 ## Project: Search and Sample Return
 ---
 
+[//]: # (Image References)
+[image1]: ./output/test_mapping.gif
 
 **The goals / steps of this project are the following:**  
 
@@ -341,10 +343,8 @@ def decision_step(Rover):
 
 **Note: running the simulator with different choices of resolution and graphics quality may produce different results, particularly on different machines!  Make a note of your simulator settings (resolution and graphics quality set on launch) and frames per second (FPS output to terminal by `drive_rover.py`) in your writeup when you submit the project so your reviewer can reproduce your results.**
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+ 
 
-
-
-![alt text][image3]
+![alt text][image1]
 
 
